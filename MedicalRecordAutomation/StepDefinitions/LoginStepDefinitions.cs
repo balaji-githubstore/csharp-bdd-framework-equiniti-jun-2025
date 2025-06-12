@@ -10,7 +10,6 @@ namespace MedicalRecordAutomation.StepDefinitions
     [Binding]
     public class LoginStepDefinitions
     {
-
         [Given("I have a browser with openemr application")]
         public async Task GivenIHaveABrowserWithOpenemrApplicationAsync()
         {
@@ -50,8 +49,24 @@ namespace MedicalRecordAutomation.StepDefinitions
         [Then("I should get not get access to portal with error {string}")]
         public async Task ThenIShouldGetNotGetAccessToPortalWithErrorAsync(string expectedValue)
         {
-            var actualValue = await AutomationHooks.PageInstance.Locator("xpath=//p[contains(text(),'Invalid')]").InnerTextAsync();      
-            Assert.That(actualValue,Is.EqualTo(expectedValue));
+            var actualValue = await AutomationHooks.PageInstance.Locator("xpath=//p[contains(text(),'Invalid')]").InnerTextAsync();
+            Assert.That(actualValue, Is.EqualTo(expectedValue));
         }
+
+        [Then("I should get username placeholder as {string}")]
+        public async Task ThenIShouldGetUsernamePlaceholderAsAsync(string expectedValue)
+        {
+            var actualValue = await AutomationHooks.PageInstance.Locator("css=#authUser").GetAttributeAsync("placeholder");
+            Assert.That(actualValue, Is.EqualTo(expectedValue));
+        }
+
+        [Then("I should get language as {string}")]
+        public void ThenIShouldGetLanguageAs(string p0)
+        {
+           //var  actualValue = await AutomationHooks.PageInstance.Locator("css=#authUser").get
+        }
+
+
+
     }
 }

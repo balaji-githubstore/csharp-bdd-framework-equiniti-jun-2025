@@ -24,3 +24,6 @@ Scenario: Invalid Login
 	And I click on login
 	Then I should get not get access to portal with error "Invalid username or password"
 
+Scenario: verify in Default Placeholder and Values
+	Then I should get username placeholder as 78877
+	And I should get language as "Default - English (Standard)"
