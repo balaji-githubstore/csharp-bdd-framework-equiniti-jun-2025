@@ -114,7 +114,7 @@ namespace MedicalRecordAutomation.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Valid Login")]
-        [NUnit.Framework.TestCaseAttribute("admin", "pass", "English (Indian)", "OpenEMR", null)]
+        [NUnit.Framework.TestCaseAttribute("admin", "pass99", "English (Indian)", "OpenEMR", null)]
         [NUnit.Framework.TestCaseAttribute("accountant", "accountant", "English (Indian)", "OpenEMR", null)]
         public async global::System.Threading.Tasks.Task ValidLogin(string username, string password, string language, string expected_Title, string[] exampleTags)
         {
