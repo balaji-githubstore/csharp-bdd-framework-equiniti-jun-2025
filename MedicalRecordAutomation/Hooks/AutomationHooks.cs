@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace MedicalRecordAutomation.Hooks
 {
+    /// <summary>
+    /// This class handles the browser and report configuration. 
+    /// </summary>
     [Binding]
     public class AutomationHooks
     {
