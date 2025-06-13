@@ -176,6 +176,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 23
  await testRunner.AndAsync("I also the alert message should contains \"Tobacco\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
+#line 24
+ await testRunner.AndAsync("I verify the updated record in datatable", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
             }
             await this.ScenarioCleanupAsync();
         }

@@ -21,6 +21,8 @@ Scenario: Verify Adding Valid Patient
 	And I close the birthday popup if available
 	Then I should verify the added name as "Medical Record Dashboard - John Wick"
 	And I also the alert message should contains "Tobacco"
+	And I verify the updated record in datatable
+		
 
 #Scenario Outline: Verify Adding Valid Patient2
 #	Given I have a browser with openemr application
