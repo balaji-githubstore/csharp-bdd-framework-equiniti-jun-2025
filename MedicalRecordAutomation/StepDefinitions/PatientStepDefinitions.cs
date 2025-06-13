@@ -84,7 +84,7 @@ namespace MedicalRecordAutomation.StepDefinitions
         public void ThenIAlsoTheAlertMessageShouldContains(string tobacco)
         {
             _hooks.ScenarioContextInstance.TryGetValue("username",out string username);
-
+            Console.WriteLine(username);
 
             _hooks.ScenarioContextInstance.TryGetValue("empDataTable", out DataTable dataTable);
 
