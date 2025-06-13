@@ -1,5 +1,7 @@
+using AutomationWrapper.Utilities;
 using MedicalRecordAutomation.Hooks;
 using Microsoft.Data.SqlClient;
+using NUnit.Framework;
 using Reqnroll;
 using System;
 using System.Threading.Tasks;
@@ -73,5 +75,14 @@ namespace MedicalRecordAutomation.StepDefinitions
         {
             
         }
+
+        [Then("verify the added patient name in datatabase {string} and {string}")]
+        public void ThenVerifyTheAddedPatientNameInDatatabaseAnd(string firstname, string lastname)
+        {
+            string output= DBUtils.GetFirstCellValue($"select count(*) from tbl_patient where firstname={firstname} and lastname={lastname}");
+
+            Assert.That(Convert.ToInt32(output),Is.GreaterThan(0));
+        }
+
     }
 }

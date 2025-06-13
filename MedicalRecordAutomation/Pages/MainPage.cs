@@ -1,4 +1,5 @@
 ﻿using MedicalRecordAutomation.Hooks;
+using MedicalRecordAutomation.Support;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace MedicalRecordAutomation.Pages
 {
-    public class MainPage
+    public class MainPage : BasePage
     {
         private AutomationHooks _hooks;
-        public MainPage(AutomationHooks hooks)
+        public MainPage(AutomationHooks hooks):base(hooks)
         {
             _hooks = hooks;
         }

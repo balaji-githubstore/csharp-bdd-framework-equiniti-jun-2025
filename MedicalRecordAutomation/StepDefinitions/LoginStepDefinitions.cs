@@ -1,5 +1,6 @@
 using MedicalRecordAutomation.Hooks;
 using MedicalRecordAutomation.Pages;
+using MedicalRecordAutomation.Support;
 using Microsoft.Playwright;
 using NUnit.Framework;
 using Reqnroll;
@@ -74,6 +75,14 @@ namespace MedicalRecordAutomation.StepDefinitions
         public async Task ThenIShouldGetLanguageAsAsync(string p0)
         {
             //var actualValue = await AutomationHooks.PageInstance.Locator("css=select[name='languageChoice'] > option.checked").InnerTextAsync();
+        }
+
+        [Then("I verify the data from excel {string} sheet {string}")]
+        public void ThenIVerifyTheDataFromExcelSheet(string file, string sheetname)
+        {
+            DataTable dataTable= ExcelUtisl.GetSheetIntoDataTable(file, sheetname);
+
+
         }
 
 

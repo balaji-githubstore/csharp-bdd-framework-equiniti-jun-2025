@@ -20,12 +20,14 @@ namespace MedicalRecordAutomation.Features
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Login")]
     [NUnit.Framework.FixtureLifeCycleAttribute(NUnit.Framework.LifeCycle.InstancePerTestCase)]
+    [NUnit.Framework.CategoryAttribute("login")]
     public partial class LoginFeature
     {
         
         private global::Reqnroll.ITestRunner testRunner;
         
-        private static string[] featureTags = ((string[])(null));
+        private static string[] featureTags = new string[] {
+                "login"};
         
         private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Features", "Login", "In order to manage the medical records \r\nAs a user\r\nI want to login into the open" +
                 "emr dashboard ", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags);
@@ -105,27 +107,36 @@ namespace MedicalRecordAutomation.Features
         
         public virtual async global::System.Threading.Tasks.Task FeatureBackgroundAsync()
         {
-#line 6
-#line hidden
 #line 7
+#line hidden
+#line 8
  await testRunner.GivenAsync("I have a browser with openemr application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Valid Login")]
+        [NUnit.Framework.CategoryAttribute("valid")]
+        [NUnit.Framework.CategoryAttribute("regression")]
         [NUnit.Framework.TestCaseAttribute("admin", "pass", "English (Indian)", "OpenEMR", null)]
         [NUnit.Framework.TestCaseAttribute("accountant", "accountant", "English (Indian)", "OpenEMR", null)]
         public async global::System.Threading.Tasks.Task ValidLogin(string username, string password, string language, string expected_Title, string[] exampleTags)
         {
-            string[] tagsOfScenario = exampleTags;
+            string[] @__tags = new string[] {
+                    "valid",
+                    "regression"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("username", username);
             argumentsOfScenario.Add("password", password);
             argumentsOfScenario.Add("language", language);
             argumentsOfScenario.Add("expected_title", expected_Title);
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Valid Login", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 9
+#line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -135,22 +146,22 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 6
+#line 7
 await this.FeatureBackgroundAsync();
 #line hidden
-#line 10
+#line 12
  await testRunner.WhenAsync(string.Format("I enter username as \"{0}\"", username), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 11
+#line 13
  await testRunner.AndAsync(string.Format("I enter password as \"{0}\"", password), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 12
+#line 14
  await testRunner.AndAsync(string.Format("I select language as \"{0}\"", language), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 13
+#line 15
  await testRunner.AndAsync("I click on login", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 14
+#line 16
  await testRunner.ThenAsync(string.Format("I should get access to portal with title as \"{0}\"", expected_Title), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -159,12 +170,14 @@ await this.FeatureBackgroundAsync();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Invalid Login")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public async global::System.Threading.Tasks.Task InvalidLogin()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "smoke"};
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Invalid Login", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 20
+#line 23
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -174,22 +187,22 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 6
+#line 7
 await this.FeatureBackgroundAsync();
 #line hidden
-#line 21
+#line 24
  await testRunner.WhenAsync("I enter username as \"john\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 22
+#line 25
  await testRunner.AndAsync("I enter password as \"john123\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 23
+#line 26
  await testRunner.AndAsync("I select language as \"English (Indian)\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 24
+#line 27
  await testRunner.AndAsync("I click on login", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 25
+#line 28
  await testRunner.ThenAsync("I should get not get access to portal with error \"Invalid username or password\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -203,7 +216,7 @@ await this.FeatureBackgroundAsync();
             string[] tagsOfScenario = ((string[])(null));
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Verify Default Placeholder and Values", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 27
+#line 31
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -213,14 +226,17 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 6
+#line 7
 await this.FeatureBackgroundAsync();
 #line hidden
-#line 28
+#line 32
  await testRunner.ThenAsync("I should get username placeholder as \"Username\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 29
+#line 33
  await testRunner.AndAsync("I should get language as \"Default - English (Standard)\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 34
+ await testRunner.AndAsync("I verify the data from excel \"openemr.xlsx\" sheet \"sheet1\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

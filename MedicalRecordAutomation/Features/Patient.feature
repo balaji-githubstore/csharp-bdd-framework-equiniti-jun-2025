@@ -1,4 +1,5 @@
-﻿Feature: Patient
+﻿@patient
+Feature: Patient
 	In order to modify the patients records 
 	as an admin
 	I would like add, edit, delete patient records
@@ -21,6 +22,7 @@ Scenario: Verify Adding Valid Patient
 	And I close the birthday popup if available
 	Then I should verify the added name as "Medical Record Dashboard - John Wick"
 	And I also the alert message should contains "Tobacco"
+	And verify the added patient name in datatabase "John" and "Wick"
 
 #Scenario Outline: Verify Adding Valid Patient2
 #	Given I have a browser with openemr application
