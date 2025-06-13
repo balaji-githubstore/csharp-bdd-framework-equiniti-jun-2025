@@ -27,3 +27,8 @@ Scenario: Invalid Login
 Scenario: Verify Default Placeholder and Values
 	Then I should get username placeholder as "Username"
 	And I should get language as "Default - English (Standard)"
+
+Scenario: Verify FogotPassword 
+	When I click on forgot password 
+	When I enter new password as "john"
+	Then I should get password changed successfully
