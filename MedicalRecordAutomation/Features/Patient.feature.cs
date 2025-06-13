@@ -104,23 +104,13 @@ namespace MedicalRecordAutomation.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify Adding Valid Patient2")]
-        [NUnit.Framework.TestCaseAttribute("admin", "pass", "English (Indian)", "john", "k", "woi", "Male", "2025-06-12", null)]
-        [NUnit.Framework.TestCaseAttribute("accountant", "accountant", "English (Indian)", "john33", "2k", "woi", "Female", "2025-06-12", null)]
-        public async global::System.Threading.Tasks.Task VerifyAddingValidPatient2(string username, string password, string language, string fname, string middlename, string lname, string gender, string dob, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("Verify Adding Valid Patient")]
+        public async global::System.Threading.Tasks.Task VerifyAddingValidPatient()
         {
-            string[] tagsOfScenario = exampleTags;
+            string[] tagsOfScenario = ((string[])(null));
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("username", username);
-            argumentsOfScenario.Add("password", password);
-            argumentsOfScenario.Add("language", language);
-            argumentsOfScenario.Add("fname", fname);
-            argumentsOfScenario.Add("middlename", middlename);
-            argumentsOfScenario.Add("lname", lname);
-            argumentsOfScenario.Add("gender", gender);
-            argumentsOfScenario.Add("dob", dob);
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Verify Adding Valid Patient2", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 26
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Verify Adding Valid Patient", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -130,25 +120,25 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 27
+#line 8
  await testRunner.GivenAsync("I have a browser with openemr application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 28
- await testRunner.WhenAsync(string.Format("I enter username as \"{0}\"", username), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line 9
+ await testRunner.WhenAsync("I enter username as \"admin\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 29
- await testRunner.AndAsync(string.Format("I enter password as \"{0}\"", password), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 10
+ await testRunner.AndAsync("I enter password as \"pass\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 30
- await testRunner.AndAsync(string.Format("I select language as \"{0}\"", language), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 11
+ await testRunner.AndAsync("I select language as \"English (Indian)\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 31
+#line 12
  await testRunner.AndAsync("I click on login", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 32
+#line 13
  await testRunner.AndAsync("I click on patient menu", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 33
+#line 14
  await testRunner.AndAsync("I click on New-search menu", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1 = new global::Reqnroll.Table(new string[] {
@@ -156,32 +146,34 @@ this.ScenarioInitialize(scenarioInfo);
                             "middlename",
                             "lastname",
                             "gender",
-                            "DOB"});
+                            "DOB",
+                            "licenseId"});
                 table1.AddRow(new string[] {
-                            string.Format("{0}", fname),
-                            string.Format("{0}", middlename),
-                            string.Format("{0}", lname),
-                            string.Format("{0}", gender),
-                            string.Format("{0}", dob)});
-#line 34
+                            "John",
+                            "w",
+                            "Wick",
+                            "Male",
+                            "2025-06-12",
+                            "sdj3j34j"});
+#line 15
  await testRunner.AndAsync("I fill the new patient form", ((string)(null)), table1, "And ");
 #line hidden
-#line 37
+#line 18
  await testRunner.AndAsync("I click on create new patient", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 38
+#line 19
  await testRunner.AndAsync("I click on confirm create new patient", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 39
+#line 20
  await testRunner.AndAsync("I store message and handle the alert box", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 40
+#line 21
  await testRunner.AndAsync("I close the birthday popup if available", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 41
- await testRunner.ThenAsync(string.Format("I should verify the added name as \"Medical Record Dashboard - {0} <lastname>\"", fname), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 22
+ await testRunner.ThenAsync("I should verify the added name as \"Medical Record Dashboard - John Wick\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 42
+#line 23
  await testRunner.AndAsync("I also the alert message should contains \"Tobacco\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
             }

@@ -22,7 +22,6 @@ Scenario: Verify Adding Valid Patient
 	Then I should verify the added name as "Medical Record Dashboard - John Wick"
 	And I also the alert message should contains "Tobacco"
 
-
 #Scenario Outline: Verify Adding Valid Patient2
 #	Given I have a browser with openemr application
 #	When I enter username as "<username>"

@@ -1,7 +1,10 @@
-using System;
-using System.Threading.Tasks;
 using MedicalRecordAutomation.Hooks;
+using Microsoft.Data.SqlClient;
 using Reqnroll;
+using System;
+using System.Data;
+using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace MedicalRecordAutomation.StepDefinitions
 {
@@ -33,8 +36,6 @@ namespace MedicalRecordAutomation.StepDefinitions
 
             var frame = AutomationHooks.PageInstance.FrameLocator("xpath=//iframe[@name='pat']");
             await frame.Locator("xpath=//input[@id='form_fname']").FillAsync(dataTable.Rows[0]["firstname"]);
-
-
 
         }
 

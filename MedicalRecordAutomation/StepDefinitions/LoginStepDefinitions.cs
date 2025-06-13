@@ -61,9 +61,9 @@ namespace MedicalRecordAutomation.StepDefinitions
         }
 
         [Then("I should get language as {string}")]
-        public void ThenIShouldGetLanguageAs(string p0)
+        public async Task ThenIShouldGetLanguageAsAsync(string p0)
         {
-           //var  actualValue = await AutomationHooks.PageInstance.Locator("css=#authUser").get
+            var actualValue = await AutomationHooks.PageInstance.Locator("css=select[name='languageChoice'] > option.checked").InnerTextAsync();
         }
 
 
