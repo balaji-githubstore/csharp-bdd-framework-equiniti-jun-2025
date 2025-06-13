@@ -7,20 +7,14 @@ using System.Threading.Tasks;
 
 namespace MedicalRecordAutomation.Pages
 {
-    public class MainPage
+    public class PatientDashboardPage
     {
         private AutomationHooks _hooks;
-        public MainPage(AutomationHooks hooks)
+        public PatientDashboardPage(AutomationHooks hooks)
         {
             _hooks = hooks;
         }
 
-        public async Task<string> GetMainPageTitleAsync()
-        {
-            return await _hooks.PageInstance.TitleAsync();
-        }
-
-        //clickonPatientMenu
-        //ClickonNewSearchMenu
+        //GetAddedPatientNameAsyc()
     }
 }

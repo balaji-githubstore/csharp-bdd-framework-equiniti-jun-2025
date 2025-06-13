@@ -13,7 +13,7 @@ namespace MedicalRecordAutomation.StepDefinitions
     {
         private readonly LoginPage _loginPage;
         private readonly MainPage _mainPage;
-        public LoginStepDefinitions(LoginPage loginPage,MainPage mainPage)
+        public LoginStepDefinitions(LoginPage loginPage, MainPage mainPage)
         {
             _loginPage = loginPage;
             _mainPage = mainPage;
@@ -29,13 +29,13 @@ namespace MedicalRecordAutomation.StepDefinitions
         [When("I enter username as {string}")]
         public async Task WhenIEnterUsernameAsAsync(string username)
         {
-          await _loginPage.EnterUsernameAsync(username);
+            await _loginPage.EnterUsernameAsync(username);
         }
 
         [When("I enter password as {string}")]
         public async Task WhenIEnterPasswordAsAsync(string password)
         {
-            //await AutomationHooks.PageInstance.Locator("css=#clearPass").FillAsync(password);
+            await _loginPage.EnterPasswordAsync(password);
         }
 
         [When("I select language as {string}")]
@@ -47,27 +47,27 @@ namespace MedicalRecordAutomation.StepDefinitions
         [When("I click on login")]
         public async Task WhenIClickOnLoginAsync()
         {
-            //await AutomationHooks.PageInstance.Locator("xpath=//button[@id='login-button']").ClickAsync();
+            await _loginPage.ClickOnLogin();
         }
 
         [Then("I should get access to portal with title as {string}")]
         public async Task ThenIShouldGetAccessToPortalWithTitleAs(string expectedValue)
         {
-           // Assert.That(await AutomationHooks.PageInstance.TitleAsync(), Is.EqualTo(expectedValue));
+            Assert.That(await _mainPage.GetMainPageTitleAsync(), Is.EqualTo(expectedValue));
         }
 
         [Then("I should get not get access to portal with error {string}")]
         public async Task ThenIShouldGetNotGetAccessToPortalWithErrorAsync(string expectedValue)
         {
-            //var actualValue = await AutomationHooks.PageInstance.Locator("xpath=//p[contains(text(),'Invalid')]").InnerTextAsync();
-            //Assert.That(actualValue, Is.EqualTo(expectedValue));
+            var actualValue = await _loginPage.GetInvalidErrorMessageAsync();
+            Assert.That(actualValue, Is.EqualTo(expectedValue));
         }
 
         [Then("I should get username placeholder as {string}")]
         public async Task ThenIShouldGetUsernamePlaceholderAsAsync(string expectedValue)
         {
-            //var actualValue = await AutomationHooks.PageInstance.Locator("css=#authUser").GetAttributeAsync("placeholder");
-            //Assert.That(actualValue, Is.EqualTo(expectedValue));
+            var actualValue = await _loginPage.GetUsernamePlaceholderAsync();
+            Assert.That(actualValue, Is.EqualTo(expectedValue));
         }
 
         [Then("I should get language as {string}")]

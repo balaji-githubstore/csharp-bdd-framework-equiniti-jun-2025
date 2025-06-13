@@ -7,20 +7,21 @@ using System.Threading.Tasks;
 
 namespace MedicalRecordAutomation.Pages
 {
-    public class MainPage
+    public class SearchAddPatientPage
     {
         private AutomationHooks _hooks;
-        public MainPage(AutomationHooks hooks)
+        public SearchAddPatientPage(AutomationHooks hooks)
         {
             _hooks = hooks;
         }
 
-        public async Task<string> GetMainPageTitleAsync()
-        {
-            return await _hooks.PageInstance.TitleAsync();
-        }
+        //enter firstname, lastname
+        //create new patient
 
-        //clickonPatientMenu
-        //ClickonNewSearchMenu
+        //confirm create new patient 
+
+        //get the alert and store in scenariocontext
+
+        //close birthday popup if available
     }
 }
