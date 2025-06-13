@@ -197,12 +197,12 @@ await this.FeatureBackgroundAsync();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("verify in Default Placeholder and Values")]
-        public async global::System.Threading.Tasks.Task VerifyInDefaultPlaceholderAndValues()
+        [NUnit.Framework.DescriptionAttribute("Verify Default Placeholder and Values")]
+        public async global::System.Threading.Tasks.Task VerifyDefaultPlaceholderAndValues()
         {
             string[] tagsOfScenario = ((string[])(null));
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("verify in Default Placeholder and Values", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Verify Default Placeholder and Values", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 27
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -217,7 +217,7 @@ this.ScenarioInitialize(scenarioInfo);
 await this.FeatureBackgroundAsync();
 #line hidden
 #line 28
- await testRunner.ThenAsync("I should get username placeholder as 78877", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync("I should get username placeholder as \"Username\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
 #line 29
  await testRunner.AndAsync("I should get language as \"Default - English (Standard)\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");

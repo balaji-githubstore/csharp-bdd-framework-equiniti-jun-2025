@@ -2,7 +2,6 @@ using MedicalRecordAutomation.Hooks;
 using Microsoft.Data.SqlClient;
 using Reqnroll;
 using System;
-using System.Data;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
@@ -14,13 +13,13 @@ namespace MedicalRecordAutomation.StepDefinitions
         [When("I click on patient menu")]
         public async Task WhenIClickOnPatientMenu()
         {
-            await AutomationHooks.PageInstance.Locator("xpath=//div[text()='Patient']").ClickAsync();
+            //await AutomationHooks.PageInstance.Locator("xpath=//div[text()='Patient']").ClickAsync();
         }
 
         [When("I click on New-search menu")]
         public async Task WhenIClickOnNew_SearchMenuAsync()
         {
-            await AutomationHooks.PageInstance.Locator("xpath=//div[text()='New/Search']").ClickAsync();
+            //await AutomationHooks.PageInstance.Locator("xpath=//div[text()='New/Search']").ClickAsync();
         }
 
         [When("I fill the new patient form")]
@@ -34,8 +33,8 @@ namespace MedicalRecordAutomation.StepDefinitions
             Console.WriteLine(dataTable.Rows[0]["DOB"]);
 
 
-            var frame = AutomationHooks.PageInstance.FrameLocator("xpath=//iframe[@name='pat']");
-            await frame.Locator("xpath=//input[@id='form_fname']").FillAsync(dataTable.Rows[0]["firstname"]);
+            //var frame = AutomationHooks.PageInstance.FrameLocator("xpath=//iframe[@name='pat']");
+            //await frame.Locator("xpath=//input[@id='form_fname']").FillAsync(dataTable.Rows[0]["firstname"]);
 
         }
 

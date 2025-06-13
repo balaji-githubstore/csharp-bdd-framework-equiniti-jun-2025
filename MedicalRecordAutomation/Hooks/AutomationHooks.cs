@@ -1,4 +1,5 @@
 ﻿using Microsoft.Playwright;
+using Reqnroll;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +14,10 @@ namespace MedicalRecordAutomation.Hooks
     [Binding]
     public class AutomationHooks
     {
-        public static IPlaywright? PlaywrightInstance { get; private set; }
-        public static IBrowser? BrowserInstance { get; private set; }
-        public static IBrowserContext? BrowserContextInstance { get; private set; }
-        public static IPage? PageInstance { get; private set; }
+        private IPlaywright PlaywrightInstance { get; set; }
+        private IBrowser BrowserInstance { get; set; }
+        public IBrowserContext BrowserContextInstance { get; private set; }
+        public IPage PageInstance { get; private set; }
 
 
         [BeforeScenario]
