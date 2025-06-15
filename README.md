@@ -15,6 +15,9 @@ This repository contains multiple branches tailored for different purposes and d
 - **`b1-bdd-static`**  
   Demonstrates **BDD (Behavior-Driven Development)** concepts using **static methods**. Useful for understanding reusable static patterns in automation and testing.
 
+- **`Added Session Notes**  
+  Session Notes Equiniti June 2025
+
 
 > 🔄 You can switch between these branches using:
 > ```
