@@ -24,7 +24,22 @@ namespace MedicalRecordAutomation.Hooks
         public IPage PageInstance { get; private set; }
 
         public BrowserSettings BrowserSettingsInstance { get; private set; }
+        public ScenarioContext ScenarioContextInstance { get; private set; }
 
+        //[BeforeTestRun]
+        //public static void Init()
+        //{
+        //    var bdd = new ExtentBDDReporter("user/build/name/");
+        //    var extent = new ExtentReports();
+        //    extent.attachReporter(bdd);
+
+        //}
+
+        //[AfterTestRun]
+        //public static void Init()
+        //{
+        //    extent.Flush();
+        //}
 
         [BeforeScenario]
         public async Task InitScriptAsyc()
@@ -47,6 +62,10 @@ namespace MedicalRecordAutomation.Hooks
         [AfterScenario]
         public async Task EndScriptAsyc()
         {
+            if(ScenarioContextInstance.ScenarioExecutionStatus==ScenarioExecutionStatus.TestError)
+            {
+                await PageInstance.ScreenshotAsync(new PageScreenshotOptions() { Path= "error" + DateTime.Now.ToString() + ".png" });
+            }
             if (PlaywrightInstance != null)
             {
                 await PageInstance.CloseAsync();
