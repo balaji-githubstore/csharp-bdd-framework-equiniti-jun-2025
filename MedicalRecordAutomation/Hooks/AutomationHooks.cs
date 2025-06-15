@@ -24,22 +24,14 @@ namespace MedicalRecordAutomation.Hooks
         public IPage PageInstance { get; private set; }
 
         public BrowserSettings BrowserSettingsInstance { get; private set; }
+        public FeatureContext FeatureContextInstance { get; private set; }
         public ScenarioContext ScenarioContextInstance { get; private set; }
 
-        //[BeforeTestRun]
-        //public static void Init()
-        //{
-        //    var bdd = new ExtentBDDReporter("user/build/name/");
-        //    var extent = new ExtentReports();
-        //    extent.attachReporter(bdd);
-
-        //}
-
-        //[AfterTestRun]
-        //public static void Init()
-        //{
-        //    extent.Flush();
-        //}
+        public AutomationHooks(FeatureContext featureContext, ScenarioContext scenarioContext)
+        {
+            FeatureContextInstance = featureContext;
+            ScenarioContextInstance = scenarioContext;
+        }
 
         [BeforeScenario]
         public async Task InitScriptAsyc()

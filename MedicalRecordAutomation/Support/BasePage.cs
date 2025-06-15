@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace MedicalRecordAutomation.Support
 {
+   /// <summary>
+   /// This class contains all reuseable code of playwright
+   /// </summary>
     public class BasePage
     {
 
