@@ -203,7 +203,7 @@ await this.FeatureBackgroundAsync();
  await testRunner.AndAsync("I click on login", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 28
- await testRunner.ThenAsync("I should get not get access to portal with error \"Invalid username or password\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync("I should get not get access to portal with error \"Invalid username or passwords\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

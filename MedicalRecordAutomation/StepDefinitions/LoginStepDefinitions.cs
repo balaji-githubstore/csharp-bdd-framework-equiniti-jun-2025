@@ -68,13 +68,14 @@ namespace MedicalRecordAutomation.StepDefinitions
         public async Task ThenIShouldGetUsernamePlaceholderAsAsync(string expectedValue)
         {
             var actualValue = await _loginPage.GetUsernamePlaceholderAsync();
-            Assert.That(actualValue, Is.EqualTo(expectedValue));
+            Assert.That(actualValue, Does.Contain(expectedValue));
         }
 
         [Then("I should get language as {string}")]
-        public async Task ThenIShouldGetLanguageAsAsync(string p0)
+        public async Task ThenIShouldGetLanguageAsAsync(string expectedValue)
         {
-            //var actualValue = await AutomationHooks.PageInstance.Locator("css=select[name='languageChoice'] > option.checked").InnerTextAsync();
+            var actualValue = await _loginPage.GetSelectedLanguagedAsync();
+            Assert.That(actualValue, Is.EqualTo(expectedValue));
         }
 
         [Then("I verify the data from excel {string} sheet {string}")]

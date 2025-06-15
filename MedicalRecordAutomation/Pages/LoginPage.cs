@@ -58,7 +58,11 @@ namespace MedicalRecordAutomation.Pages
         {
             return await _hooks.PageInstance.Locator(_usernameLocator).GetAttributeAsync("placeholder");
         }
-
+        public async Task<string> GetSelectedLanguagedAsync()
+        {
+            //return await _hooks.PageInstance.Locator("css=select[name='languageChoice'] > option.checked").InnerTextAsync();
+            return await base.GetInputValueAsync("css=select[name='languageChoice'] > option.checked");
+        }
 
     }
 }

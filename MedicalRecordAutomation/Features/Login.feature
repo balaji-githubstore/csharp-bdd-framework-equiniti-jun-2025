@@ -25,7 +25,7 @@ Scenario: Invalid Login
 	And I enter password as "john123"
 	And I select language as "English (Indian)"
 	And I click on login
-	Then I should get not get access to portal with error "Invalid username or password"
+	Then I should get not get access to portal with error "Invalid username or passwords"
 
 	
 Scenario: Verify Default Placeholder and Values
